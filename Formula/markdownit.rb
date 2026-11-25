@@ -10,6 +10,13 @@ class Markdownit < Formula
   license "MIT"
   head "https://github.com/olebhartvigsen/MarkDownIt.git", branch: "main"
 
+  # The commit URL above gives livecheck nothing to compare, so it reads the
+  # latest GitHub release instead.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   depends_on "cmake" => :build
   depends_on :macos
 
