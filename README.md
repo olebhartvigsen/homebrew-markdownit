@@ -14,6 +14,16 @@ ln -sfn "$(brew --prefix)/opt/markdownit/MarkDownIt.app" /Applications/MarkDownI
 The formula prints the second command when it finishes; Homebrew does not
 write to `/Applications` on its own.
 
+Since Homebrew 6, non-official taps need explicit trust. The fully qualified
+name above grants trust for this one formula as part of the install. If you tap
+first and then install by the short name, grant it yourself:
+
+```sh
+brew tap olebhartvigsen/markdownit
+brew trust --formula olebhartvigsen/markdownit/markdownit
+brew install markdownit
+```
+
 ## Why a tap and not homebrew/cask
 
 Two reasons, both unavoidable for now:
