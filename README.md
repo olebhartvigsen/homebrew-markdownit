@@ -24,6 +24,10 @@ brew trust --formula olebhartvigsen/markdownit/markdownit
 brew install markdownit
 ```
 
+Homebrew reports its own install statistics by default. That is Homebrew's
+analytics, not the app's: `HOMEBREW_NO_ANALYTICS=1 brew install ...` turns it
+off. The app sends nothing while it builds.
+
 ## Why a tap and not homebrew/cask
 
 Two reasons, both unavoidable for now:
